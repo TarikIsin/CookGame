@@ -602,7 +602,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1054789573
+--- !u!1001 &1272053462
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -612,19 +612,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4703441766095039211, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_Name
-      value: ClearCounter (1)
+      value: ClearCounter
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -4.0798454
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.000000067135176
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.12
+      value: -0.85503316
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -690,6 +690,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 7
   gameInput: {fileID: 1897430014}
+  countersLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  rotationSpeed: 20
 --- !u!4 &1615051848
 Transform:
   m_ObjectHideFlags: 0
@@ -863,7 +867,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5120280786640974755
+--- !u!1001 &2090569267
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -873,19 +877,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4703441766095039211, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_Name
-      value: ClearCounter
+      value: ClearCounter (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.31
+      value: -6.449643
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00000006027054
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.12
+      value: -0.9361027
       objectReference: {fileID: 0}
     - target: {fileID: 8776250076627785539, guid: 249591bc29e31ce42a0d60e403d277c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -931,5 +935,5 @@ SceneRoots:
   - {fileID: 1615051848}
   - {fileID: 27308540}
   - {fileID: 1897430015}
-  - {fileID: 5120280786640974755}
-  - {fileID: 1054789573}
+  - {fileID: 1272053462}
+  - {fileID: 2090569267}

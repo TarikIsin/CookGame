@@ -1,27 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
+    public event EventHandler OnInteractAction;
+    private PlayerInputAction playerInputAction;
+
+    private void Awake()
+    {
+        playerInputAction = new PlayerInputAction();
+        playerInputAction.Player.Enable();
+
+        playerInputAction.Player.Interact.performed += Interact_performed;
+    }
+
+    private void Interact_performed(InputAction.CallbackContext obj)
+    {
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
+    }
+
     public Vector2 GetMovementVectorNormalized()
     {
-        Vector2 inputVector = Vector2.zero;
-        if (Keyboard.current.wKey.isPressed)
-        {
-            inputVector.y += 1;
-        }
-        if (Keyboard.current.sKey.isPressed)
-        {
-            inputVector.y -= 1;
-        }
-        if (Keyboard.current.aKey.isPressed)
-        {
-            inputVector.x -= 1;
-        }
-        if (Keyboard.current.dKey.isPressed)
-        {
-            inputVector.x += 1;
-        }
+        Vector2 inputVector = playerInputAction.Player.Move.ReadValue<Vector2>();
+
         inputVector = inputVector.normalized;
         return inputVector;
     }

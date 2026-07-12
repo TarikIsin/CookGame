@@ -1,23 +1,32 @@
+using System;
 using UnityEngine;
-public class ClearCounter : BaseCounter {
 
-    [SerializeField] private KitchenObjectsSO kitchenObjects;
+public class CuttingCounter : BaseCounter {
+
+    [SerializeField] private KitchenObjectsSO cutKitchenObjectSO;
 
     public override void Interact(Player player) {
         if (!HasKitchenObject()) {
             if (player.HasKitchenObject()) {
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
-            else {
-
+            else { 
             }
-        } else {
+        }
+        else {
             if (player.HasKitchenObject()) {
-                
             }
             else {
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
+        }
+    }
+
+    public override void InteractAlternate(Player player) {
+        if (HasKitchenObject()) {
+            GetKitchenObject().DestroySelf();
+
+            KitchenObject.SpawnKitchenObject(cutKitchenObjectSO, this);
         }
     }
 }

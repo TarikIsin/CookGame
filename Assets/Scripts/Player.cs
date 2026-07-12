@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     {
         if (selectedCounter != null)
         {
-            Debug.Log("Etkileşime girilen Counter: " + selectedCounter.name);
             selectedCounter.Interact();
         }
     }

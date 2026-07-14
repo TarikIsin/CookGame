@@ -72,7 +72,7 @@ public class CuttingCounter : BaseCounter, IHasProgress {
 
     private bool HasRecipeWithInput(KitchenObjectsSO inputKitchenObjectSO) {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(inputKitchenObjectSO);
-        return cuttingRecipeSO.output;
+        return cuttingRecipeSO != null;
     }
 
     private KitchenObjectsSO GetOutputForInput(KitchenObjectsSO inputKitchenObjectSO) {

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using static CuttingCounter;
 
 public class StoveCounter : BaseCounter, IHasProgress {
 

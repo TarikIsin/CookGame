@@ -1,37 +1,39 @@
+using System;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
+
+    public static event EventHandler OnAnyObjectPlacedHere;
     [SerializeField] private Transform counterTopPoint;
 
     private KitchenObject kitchenObject;
 
-    public virtual void Interact(Player player)
-    {
+    public virtual void Interact(Player player) {
         Debug.LogError("BaseCounter.Interact() was called");
     }
 
-    public virtual void InteractAlternate(Player player)
-    {
+    public virtual void InteractAlternate(Player player) {
         // Debug.LogError("BaseCounter.InteractAlternate() was called");
     }
 
-    public Transform GetKitchenObjectFollowTransform()
-    {
+    public Transform GetKitchenObjectFollowTransform() {
         return counterTopPoint;
     }
 
-    public void SetKitchenObject(KitchenObject kitchenObject)
-    {
+    public void SetKitchenObject(KitchenObject kitchenObject) {
         this.kitchenObject = kitchenObject;
+
+        if (kitchenObject != null) {
+            OnAnyObjectPlacedHere?.Invoke(this, EventArgs.Empty);
+        }
+        
     }
 
-    public KitchenObject GetKitchenObject()
-    {
+    public KitchenObject GetKitchenObject() {
         return kitchenObject;
     }
 
-    public void ClearKitchenObject()
-    {
+    public void ClearKitchenObject() {
         kitchenObject = null;
     }
 
